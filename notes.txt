@@ -257,3 +257,60 @@
     - Works well inside cards or layout columns.
 
 -->
+
+
+<!-- BADGE
+
+  🔹 What is a Badge?
+      - A small count or label used to highlight information.
+      - Commonly used for notifications, statuses, or counts.
+      - Can be placed inside buttons, links, headings, etc.
+
+  🔹 Basic Badge Structure:
+      <span class="badge bg-primary">New</span>
+
+  🔹 Key Classes:
+      - `badge`: Base badge style
+      - `bg-*`: Sets background color (e.g., `bg-primary`, `bg-success`)
+      - `text-bg-*`: Alternative utility to change both text & background
+
+  🔹 Example in Button:
+      <button type="button" class="btn btn-primary">
+        Messages <span class="badge bg-light text-dark">4</span>
+      </button>
+
+  🔹 Pill Badges:
+      - Rounded badges using `rounded-pill`
+      Example:
+        <span class="badge bg-success rounded-pill">99+</span>
+
+  🔹 Contextual Colors:
+      - `bg-primary`
+      - `bg-secondary`
+      - `bg-success`
+      - `bg-danger`
+      - `bg-warning`
+      - `bg-info`
+      - `bg-light`
+      - `bg-dark`
+
+  🔹 Placement Examples:
+      - Inside headings:
+        <h4>Inbox <span class="badge bg-danger">7</span></h4>
+      - Inside nav items or buttons
+
+  🧠 Use Case:
+    Use badges to draw attention to numbers or statuses (like unread messages, alerts, etc.)
+
+    ✅ Great for:
+      - Notifications
+      - Labels
+      - Status indicators
+      - Product counts or tags
+
+  🛠 Tips:
+    - Combine with flex utilities for layout
+    - Use `position-relative` and `position-absolute` for overlays
+    - Avoid using only color — add icons or text for accessibility
+
+-->
