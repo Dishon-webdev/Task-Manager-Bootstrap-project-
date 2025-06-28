@@ -314,3 +314,390 @@
     - Avoid using only color — add icons or text for accessibility
 
 -->
+
+
+<!-- MODAL
+
+  🔹 What is a Modal?
+      - A dialog box/popup window displayed on top of the current page.
+      - Used for alerts, forms, confirmations, or additional info.
+      - Requires JavaScript to function properly.
+
+  🔹 Basic Modal Structure:
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Modal Title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Modal body content goes here.
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  🔹 Trigger Button:
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Launch Modal
+      </button>
+
+  🔹 Key Classes:
+      - `modal`: Main modal wrapper
+      - `modal-dialog`: Box wrapper
+      - `modal-content`: Main content box
+      - `modal-header`, `modal-body`, `modal-footer`: Section dividers
+      - `btn-close`: Close (×) button
+      - `fade`: Adds fade transition
+
+  🔹 Custom Sizes:
+      - `.modal-sm` → Small modal
+      - `.modal-lg` → Large modal
+      - `.modal-xl` → Extra large modal
+      Example: 
+        <div class="modal-dialog modal-lg">
+
+  🔹 Centering:
+      - Use `.modal-dialog-centered` to center vertically
+
+  🔹 Scrollable Body:
+      - Use `.modal-dialog-scrollable` to make body scrollable
+
+  🧠 Use Case:
+    Use modals to present user actions without navigating away from the page.
+
+    ✅ Great for:
+      - Login/Sign-up forms
+      - Alerts/Confirmations
+      - Displaying large content without page reload
+
+  🛠 Tips:
+    - Always give modals an `id` for targeting
+    - Use `data-bs-dismiss="modal"` to close via buttons
+    - Don't overuse — can be intrusive to UX
+
+-->
+
+
+<!-- DROPDOWN
+
+  🔹 What is a Dropdown?
+      - A toggleable menu that allows the user to choose one or more options.
+      - Often used in navigation bars, forms, or buttons.
+
+  🔹 Basic Dropdown Structure:
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Dropdown button
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else</a></li>
+        </ul>
+      </div>
+
+  🔹 Key Classes:
+      - `dropdown`: Wrapper for the dropdown
+      - `dropdown-toggle`: Toggles dropdown visibility
+      - `dropdown-menu`: Contains the dropdown items
+      - `dropdown-item`: Styles individual items
+
+  🔹 Alignment:
+      - Default: aligned to left
+      - Add `.dropdown-menu-end` to align right:
+        <ul class="dropdown-menu dropdown-menu-end">
+
+  🔹 Dropdown Inside Nav:
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+          Menu
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+        </ul>
+      </li>
+
+  🔹 Dropdown Divider:
+      - Add a line between items using:
+        <li><hr class="dropdown-divider"></li>
+
+  🔹 Dropdown Header:
+      - Add non-clickable label using:
+        <li><h6 class="dropdown-header">Header</h6></li>
+
+  🧠 Use Case:
+    Use dropdowns to organize related links or options without cluttering the UI.
+
+    ✅ Great for:
+      - Navigation bars
+      - Account or settings menus
+      - Actions under one button (e.g., Export, Share)
+
+  🛠 Tips:
+    - Works with buttons or links
+    - Use Bootstrap JS or CDN for proper toggle behavior
+    - Avoid nesting dropdowns too deeply (complex UX)
+
+-->
+
+
+<!-- NAV & TABS
+
+  🔹 What is Nav?
+      - A flexible navigation component for links, tabs, and pills.
+      - Commonly used for menus, tabbed content, or switching views.
+
+  🔹 Basic Nav Structure:
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Profile</a>
+        </li>
+      </ul>
+
+  🔹 Types of Nav:
+      - Tabs: <ul class="nav nav-tabs">
+      - Pills: <ul class="nav nav-pills">
+
+  🔹 Fill & Justify:
+      - `.nav-fill`: Equal-width items filling container
+      - `.nav-justified`: Justify items to full width
+
+  🔹 Vertical Nav:
+      - Add `.flex-column` to make nav vertical
+        Example:
+          <ul class="nav flex-column">
+
+  🔹 Disabled & Active Links:
+      - `.active`: Highlights the active link
+      - `.disabled`: Makes a link unclickable
+
+  🔹 Tabs with Content:
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#home-tab" type="button">Home</button>
+        </li>
+        <li class="nav-item">
+          <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-tab" type="button">Profile</button>
+        </li>
+      </ul>
+
+      <!-- Tab content -->
+      <div class="tab-content">
+        <div class="tab-pane fade show active" id="home-tab">
+          Home tab content...
+        </div>
+        <div class="tab-pane fade" id="profile-tab">
+          Profile tab content...
+        </div>
+      </div>
+
+  🔹 Key Classes:
+      - `nav`, `nav-item`, `nav-link`: Basic nav components
+      - `nav-tabs`: Makes links look like tabs
+      - `nav-pills`: Gives pill-style buttons
+      - `tab-content`, `tab-pane`: Wraps the content
+      - `fade`, `show`, `active`: Controls transitions and visibility
+
+  🧠 Use Case:
+    Use navs and tabs to navigate between sections or switch content views without reloading the page.
+
+    ✅ Great for:
+      - Tabbed interfaces
+      - Vertical menus
+      - Dashboard layouts
+
+  🛠 Tips:
+    - Use `data-bs-toggle="tab"` for tab functionality
+    - Use `aria-controls`, `aria-selected`, and roles for accessibility
+    - Add transitions with `.fade`
+
+-->
+
+
+<!-- PAGINATION
+
+  🔹 What is Pagination?
+      - A navigation component to split content across multiple pages.
+      - Helps users move through large sets of items (e.g., blog posts, products).
+
+  🔹 Basic Pagination Structure:
+      <nav>
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+      </nav>
+
+  🔹 Key Classes:
+      - `pagination`: Main wrapper
+      - `page-item`: Each page number or control
+      - `page-link`: Styled anchor inside page-item
+
+  🔹 Active & Disabled States:
+      - Active Page:
+          <li class="page-item active"><a class="page-link" href="#">2</a></li>
+      - Disabled Button:
+          <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+
+  🔹 Sizing Options:
+      - Small: `.pagination-sm`
+      - Large: `.pagination-lg`
+        Example:
+          <ul class="pagination pagination-lg">
+
+  🔹 Alignment:
+      - Center: `<ul class="pagination justify-content-center">`
+      - Right: `<ul class="pagination justify-content-end">`
+
+  🔹 Icons (using &laquo; and &raquo;):
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+
+  🧠 Use Case:
+    Use pagination to improve user experience when dealing with many items across multiple pages.
+
+    ✅ Great for:
+      - Blog/article navigation
+      - Product listing
+      - Table or data view pages
+
+  🛠 Tips:
+    - Use `aria-label` and screen reader text (`<span class="visually-hidden">`) for accessibility
+    - Combine with server-side or JavaScript logic for dynamic page changes
+
+-->
+
+
+<!-- TOOLTIP
+
+  🔹 What is a Tooltip?
+      - A small popup box that appears when a user hovers over or focuses on an element.
+      - Provides additional information without cluttering the UI.
+
+  🔹 Basic Tooltip Usage:
+      <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" title="Tooltip text">
+        Hover me
+      </button>
+
+  🔹 Enable Tooltips (required!):
+      - You must initialize tooltips using JavaScript:
+        <script>
+          const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+          const tooltipList = [...tooltipTriggerList].map(el => new bootstrap.Tooltip(el));
+        </script>
+
+  🔹 Placement Options:
+      - Top (default): `data-bs-placement="top"`
+      - Bottom: `data-bs-placement="bottom"`
+      - Left: `data-bs-placement="left"`
+      - Right: `data-bs-placement="right"`
+
+      Example:
+        <button data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip on right">Right</button>
+
+  🔹 Tooltip with HTML:
+      <button data-bs-toggle="tooltip" data-bs-html="true" title="<em>Custom</em> <u>HTML</u>">HTML Tooltip</button>
+
+  🔹 Key Attributes:
+      - `data-bs-toggle="tooltip"`: Activates tooltip
+      - `title`: Text shown in tooltip
+      - `data-bs-placement`: Direction
+      - `data-bs-html="true"`: Allows HTML inside tooltip
+
+  🧠 Use Case:
+    Use tooltips to give users hints, labels, or extra context without cluttering the UI.
+
+    ✅ Great for:
+      - Describing icons
+      - Giving hints for buttons
+      - Short labels for form fields
+
+  🛠 Tips:
+    - Must include Bootstrap’s JS bundle for tooltips to work
+    - Tooltips won’t appear unless initialized with JavaScript
+    - Avoid long text — keep tooltips short and clear
+
+-->
+
+
+<!-- POPOVER
+
+  🔹 What is a Popover?
+      - A popup box that appears when clicking or focusing on an element.
+      - Similar to a tooltip, but can contain more content like titles and paragraphs.
+
+  🔹 Basic Popover Usage:
+      <button type="button" class="btn btn-primary" 
+        data-bs-toggle="popover" 
+        title="Popover Title" 
+        data-bs-content="This is the popover content.">
+        Click me
+      </button>
+
+  🔹 Enable Popovers (required!):
+      - Popovers must be initialized with JavaScript:
+        <script>
+          const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+          const popoverList = [...popoverTriggerList].map(el => new bootstrap.Popover(el));
+        </script>
+
+  🔹 Placement Options:
+      - Top (default): `data-bs-placement="top"`
+      - Bottom: `data-bs-placement="bottom"`
+      - Left: `data-bs-placement="left"`
+      - Right: `data-bs-placement="right`
+
+      Example:
+        <button data-bs-toggle="popover" data-bs-placement="bottom" title="Note" data-bs-content="Info here.">
+          Bottom Popover
+        </button>
+
+  🔹 Trigger Types:
+      - Default: `click`
+      - Others: `hover`, `focus`, `manual`
+      - Use: `data-bs-trigger="hover focus"`
+
+      Example:
+        <button data-bs-toggle="popover" data-bs-trigger="hover" ...>Hover Me</button>
+
+  🔹 HTML Content in Popover:
+      - Use `data-bs-html="true"` to allow HTML inside:
+        <button data-bs-toggle="popover" data-bs-html="true" data-bs-content="<b>Bold</b> content">HTML</button>
+
+  🔹 Key Attributes:
+      - `data-bs-toggle="popover"`: Enables popover
+      - `data-bs-content`: Content inside
+      - `title`: Title of the popover
+      - `data-bs-placement`: Position
+      - `data-bs-trigger`: How it opens (click, hover, focus)
+
+  🧠 Use Case:
+    Use popovers when you need more space than a tooltip for showing short instructions, hints, or contextual help.
+
+    ✅ Great for:
+      - Form field help
+      - Descriptive tips
+      - Instructions on buttons or icons
+
+  🛠 Tips:
+    - You **must include Bootstrap’s JS** to make it work
+    - Use popovers sparingly — they can cover UI elements
+    - Prefer tooltips for single-line hints, popovers for more detailed content
+
+-->
